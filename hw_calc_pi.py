@@ -1,4 +1,5 @@
-from pylab import * 
+import numpy as np
+import pylab as pyl
 
 def wallis(n):
     my_pi=1
@@ -6,8 +7,8 @@ def wallis(n):
         my_pi*=4*i**2/float(4*i**2-1)
     return float(my_pi*2)
 
-x=arange(1,1000,10)
-y=zeros(x.size)
+x=np.arange(1,1000,10)
+y=np.zeros(x.size)
 
 j=0
 
@@ -16,12 +17,15 @@ for k in x:
    j+=1
 
 print y[x.size-1]
-plot(x,y,label='wallis formula')
-l=plt.axhline(y=pi,color='r',label='pi')
 
-title("wallis's formula",fontsize=20) 
-xlabel('times',fontsize=15)
-ylabel('result',fontsize=15)
+pyl.plot(x,y,label='wallis formula')
 
-legend(loc=7)
-show()
+l=pyl.axhline(y=np.pi,color='r',label='pi')
+
+pyl.title("wallis's formula",fontsize=20) 
+pyl.xlabel('trials',fontsize=15)
+pyl.ylabel('result',fontsize=15)
+
+pyl.legend(loc=7)
+
+pyl.show()
