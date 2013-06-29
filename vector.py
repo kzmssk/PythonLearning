@@ -9,7 +9,7 @@ def angle(x,y):
         return 180.+tmp
     else:
         return tmp
-filename=raw_input('load data in data/ ?.txt ...')
+filename=raw_input('load data at data/ ?.txt ...')
 data=np.loadtxt('data/'+filename+'.txt', delimiter=',')
 
 x=data[:,0]
